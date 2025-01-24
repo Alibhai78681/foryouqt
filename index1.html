@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Question</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ff9999, #ffcccc);
+            overflow: hidden;
+        }
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            padding: 30px;
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+        }
+        header img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.5; /* Adjust for better contrast */
+        }
+        .header-text {
+            z-index: 2;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .question-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .question-box p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .btn-yes {
+            background-color: #4caf50;
+            color: white;
+        }
+        .btn-no {
+            background-color: #f44336;
+            color: white;
+        }
+        .love-message {
+            display: none;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 4rem;
+            color: #ff0000;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #ff9999;
+            color: black;
+            padding: 10px 0;
+            font-size: 1rem;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+<header id="header">
+    <img src="new.jpg" alt="Header Background">
+    <div class="header-text">Just Say Yes QT ❤️ 😊</div>
+</header>
+
+<div class="question-box" id="questionBox">
+    <p>Do you love me?</p>
+    <button class="btn btn-yes" onclick="showLove()">Yes</button>
+    <button class="btn btn-no" onclick="moveBox()">No</button>
+</div>
+<div class="love-message" id="loveMessage">
+    I love you too ❤️ 😊
+</div>
+
+<footer>
+    Made with ❤️ to show how special you are! 😊
+</footer>
+
+<script>
+    const questionBox = document.getElementById('questionBox');
+    const loveMessage = document.getElementById('loveMessage');
+
+    function moveBox() {
+        const x = Math.random() * (window.innerWidth - questionBox.offsetWidth);
+        const y = Math.random() * (window.innerHeight - questionBox.offsetHeight);
+        questionBox.style.left = `${x}px`;
+        questionBox.style.top = `${y}px`;
+    }
+
+    function showLove() {
+        questionBox.style.display = 'none';
+        loveMessage.style.display = 'block';
+    }
+</script>
+</body>
+</html>
